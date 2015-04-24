@@ -1,0 +1,12 @@
+api:
+  build: .
+  command: php app/console server:run 0.0.0.0:8000
+  ports:
+    - "8000:8000"
+  volumes:
+    - ".:/var/www/html"
+  links:
+    - mysql
+
+mysql:
+  image: mysql
